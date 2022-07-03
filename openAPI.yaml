@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: GROUP 6 PROJECT E-COMMERCE
-  description: description API BE9
+  description: Description API BE9
   termsOfService: https://www.kelompok6.id
   contact:
     name: API Support
@@ -42,6 +42,8 @@ paths:
         - Login
       summary: login user
       description: Login user description
+      security:
+        - JWTAuth: []      
       requestBody:
         content:
           application/json:
@@ -445,6 +447,12 @@ components:
           type: string
         }
       }
+  securitySchemes:
+    JWTAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "use Token"
 
 
       
